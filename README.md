@@ -5,11 +5,14 @@
    Arroja diferentes errores:
 
    En Mozilla Firefox:
-   -Error de seguridad
-   -Uncaught DOMException: The operation is insecure
+   
+      -Error de seguridad
+      
+      -Uncaught DOMException: The operation is insecure
    
    En Google Chrome:
-   -Uncaught DOMException: Failed to execute 'pushState' on 'History'
+   
+      -Uncaught DOMException: Failed to execute 'pushState' on 'History'
     
    Previamente se habia realizado a traves de una etiqueta <a> pero la idea es que esto se realize sin necesidad de recargar la pagina
 
