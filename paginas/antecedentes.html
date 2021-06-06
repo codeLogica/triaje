@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Antecedentes Patologicos</title>
+</head>
+<body>
+    <div>
+        <h1>Antecedentes</h1>
+    </div>
+    
+    <div>
+        <h2>Presenta alguna de las siguientes condiciones</h2>
+        <p>Enfermedades Cronico Degenerativas</p>
+        <p>Uso de esteroides u depresores del sistema inmune</p>
+        <button class="antecedentesPresentes" onclick="valorBoton('antecedentesPresentes')">Si </button>
+        <button class="antecedentesAusentes" onclick="valorBoton('antecedentresAusentes')">No</button>
+    </div>
+
+    <div>
+        <h2>Datos de Abuso</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo quasi corrupti soluta rem fugit, perspiciatis quod atque repellat maiores suscipit laboriosam dolor obcaecati autem minima mollitia id numquam aut! Quas.</p>
+        <button class="abusoPresente" onclick="valorBoton('abusoPresente')">Si</button>
+        <button class="abusoAusente" onclick="valorBoton('abusoAusente')">No</button>
+    </div>
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/resultado.html");
+        }
+    </script>
+</body>
+</html>
+

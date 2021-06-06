@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspecto General</title>
+</head>
+<body>
+    <div>
+        <h1>Aspecto General</h1>
+        <h2>Nivel de conciencia</h2>
+    </div>
+    
+    <div>
+        <button class="concienciaDespierto" onclick="valorBoton('despierto')">Consciente | Despierto </button>
+        <button class="concienciaDormido" onclick="valorBoton('dormido')">Dormido | Despierta Rapido</button>
+        <button class="concienciaIrritable" onclick="valorBoton('irritable')"> Consciencia Alterada | Irritable | Despierta Lento</button>
+        <button class="concienciaConvulsiones" onclick="valorBoton('convulsiones')">No despierta | No duerme | Convulsiones</button>
+    </div>
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/coloracionPiel.html");
+        }
+    </script>
+</body>
+</html>
+

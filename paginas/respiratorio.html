@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividad Respiratoria</title>
+</head>
+<body>
+    <div>
+        <h1>Actividad Respiratoria</h1>
+    </div>
+
+    <div>
+        <h3>Ruidos Respiratorios Patologicos</h3>
+        <h4>¿Hay presencia de ruidos patologicos?</h4>
+        <div id="ruido-respiratorio">
+            <button class="ruidosPatologicosPresentes" onclick="crearBoton('ruidoPresente')">Si</button>
+            <button class="ruidosPatologicosAusentes" onclick="valorBoton('ruidoAusente')">No</button>
+        </div>
+    </div>
+
+    <div>
+        <h3>Datos de Dificultad Respiratoria</h3>
+        <h4>¿Hay presencia de datos de dificultad respiratoria?</h4>
+        <div id="dificultad-respiratorio">
+            <button class="dificultadRespiratoriaPresente" onclick="crearBoton('dificultadPresente')">Si</button>
+            <button class="dificultadRespiratoriaAusente" onclick="valorBoton('dificultadAusente')">No</button>
+        </div>
+    </div>
+
+    <div>
+        <h3>Posicion Patologica</h3>
+        <h4>¿Se encuentra en posicion respiratoria patologica?</h4>
+        <div id="posicion-respiratorio">
+            <button class="posicionRespiratoriaPresente" onclick="crearBoton('posicionPresente')">Si</button>
+            <button class="posicionRespiratoriaAusente" onclick="valorBoton('posicionAusente')">No</button>
+        </div>
+    </div>
+
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/antecedentes.html");
+        }
+    </script>
+</body>
+</html>

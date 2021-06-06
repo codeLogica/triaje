@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspecto General</title>
+</head>
+<body>
+    <div>
+        <h1>Aspecto General</h1>
+        <h2>Contacto Visual</h2>
+    </div>
+    
+    <div>
+        <button class="mantieneMirada" onclick="valorBoton('mantieneMirada')">Mantiene la mirada</button>
+        <button class="noMantieneMirada" onclick="valorBoton('noMantieneMirada')">No mantiene la mirada</button>
+        <button class="noDirigeMirada" onclick="valorBoton('noDirigeMirada')">No dirige la mirada</button>
+    </div>
+
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/llanto.html");
+        }
+    </script>
+</body>
+</html>

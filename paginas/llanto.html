@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspecto General</title>
+</head>
+<body>
+    <div>
+        <h1>Aspecto General</h1>
+        <h2>Calidad del Llanto</h2>
+    </div>
+    
+    <div>
+        <h3>Intensidad del Llanto</h3>
+        <button class="llantoFuerte" onclick="valorBoton('llantoFuerte')">Fuerte</button>
+        <button class="llantoDebil" onclick="valorBoton('llantoDebil')">Debil</button>
+    </div>
+
+    <div>
+        <h3>Consolabilidad</h3>
+        <button class="llantoConsolable" onclick="valorBoton('llantoConsolable')">Consolable</button>
+        <button class="llantoInconsolable" onclick="valorBoton('llantoInconsolable')">Inconsolable</button>
+    </div>
+
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/respiratorio.html");
+        }
+    </script>
+</body>
+</html>

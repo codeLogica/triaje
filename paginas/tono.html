@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspecto General</title>
+</head>
+<body>
+    <div>
+        <h1>Aspecto General</h1>
+        <h2>Tono</h2>
+    </div>
+    
+    <div>
+        <button class="tonoEuto" onclick="valorBoton('eutonico')">Eutonico</button>
+        <button class="tonoHipo" onclick="valorBoton('hipotonico')">Hipotonico</button>
+        <button class="tonoHiper" onclick="valorBoton('hipertonico')">Hipertonico</button>
+    </div>
+
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/contactoVisual.html");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aspecto General</title>
+</head>
+<body>
+    <div>
+        <h1>Aspecto General</h1>
+        <h2>Coloracion de la Piel</h2>
+    </div>
+    
+    <div>
+        <button class="colorPielRosa" onclick="valorBoton('rosada')">Rosada</button>
+        <button class="colorPielPalida" onclick="valorBoton('palida')">Palida</button>
+        <button class="colorPielCianotica" onclick="valorBoton('cianotica')">Cianotica</button>
+        <button class="colorPielRubicunda" onclick="valorBoton('rubicunda')">Rubicunda</button>
+        <button class="colorPielMarmorea" onclick="valorBoton('marmorea')">Marmorea</button>
+        <button class="colorPielPurpura" onclick="valorBoton('purpurica')">Purpurica</button>
+
+    </div>
+
+
+    <br>
+    <div>
+        <button onclick="cambiarPagina()">CONTINUAR</button>
+    </div>
+
+    <script src="../codigo/script.js">
+        function cambiarPagina(){
+            history.pushState(null, "", "../paginas/hidratacion.html");
+        }
+    </script>
+</body>
+</html>
+
