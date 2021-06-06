@@ -1,4 +1,5 @@
-#Datos de importancia
+Datos de importancia
+-------------
 
 1. No se puede cambiar entre paginas HTML.
    Arroja diferentes errores:
