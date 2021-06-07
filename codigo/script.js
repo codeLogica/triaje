@@ -562,6 +562,16 @@ function valorBoton(valor){
 }
 
 //-------------------------ASIGNACION DE VALOR A PEDCTAS SEGUN VALOR ESCALAS------------------------//
+//Objeto con valores de codigos segun color.
+const codigos = {
+    'AZUL':'V',
+    'VERDE':'IV',
+    'AMARILLO':'III',
+    'NARANJA':'II',
+    'ROJO':'I'
+}
+
+
 function valorTriangulo(){
     if(trianguloAparienciaInteraccion == true && trianguloAparienciaTono == true && trianguloAParienciaMirada == true && trianguloAparienciaLlanto == true){
         trianguloAPariencia = true;
@@ -572,72 +582,115 @@ function valorTriangulo(){
 
 function valorTrianguloPEDCTAS(){
     if(trianguloAPariencia == true && trianguloRespiracion == true && trianguloCirculacion == true){
-        paedctasTriangulo = 'azul';
+        paedctasTriangulo = Object.keys(codigos)[0];
     }else if(trianguloAPariencia == false && trianguloRespiracion == true && trianguloCirculacion == true){
-        paedctasTriangulo = 'verde';
+        paedctasTriangulo = Object.keys(codigos)[1];
     }else if(trianguloAPariencia == true && trianguloRespiracion == false && trianguloCirculacion == true){
-        paedctasTriangulo = 'amarillo';
+        paedctasTriangulo = Object.keys(codigos)[2];
     }else if(trianguloAPariencia == false && trianguloRespiracion == false && trianguloCirculacion == true){
-        paedctasTriangulo = 'naranja';
+        paedctasTriangulo = Object.keys(codigos)[3];
     }else if(trianguloApariencia == true && trianguloRespiracion == true && trianguloCirculacion == false){
-        paedctasTriangulo = 'amarillo';
+        paedctasTriangulo = Object.keys(codigos)[2];
     }else if(trianguloApariencia == false && trianguloRespiracion == true && trianguloCirculacion == false){
-        paedctasTriangulo = 'naranja';
+        paedctasTriangulo = Object.keys(codigos)[3];
     }else if(trianguloApariencia == false && trianguloRespiracion == false && trianguloCirculacion == false){
-        paedctasTriangulo = 'rojo';
+        paedctasTriangulo = Object.keys(codigos)[4];
     }
 }
 
 function valorAlertaPEDCTAS(){
     if(sistemaAlertaTemprana == 0){
-        paedctasAlerta = 'azul';
+        paedctasAlerta = Object.keys(codigos)[0];
     }else if(sistemaAlertaTemprana == 1){
-        paedctasAlerta = 'verde';
+        paedctasAlerta = Object.keys(codigos)[1];
     }else if(sistemaAlertaTemprana == 2){
-        paedctasAlerta = 'amarillo';
+        paedctasAlerta = Object.keys(codigos)[2];
     }else if(sistemaAlertaTemprana == 3){
-        paedctasAlerta = 'naranja';
+        paedctasAlerta = Object.keys(codigos)[3];
     }else if(sistemaAlertaTemprana >3){
-        paedctasAlerta = 'rojo';
+        paedctasAlerta = Object.keys(codigos)[4];
     }
 }
 
 //No definitivo; puede que haya cambio en la logica con la que se mide esta escala.
 function valorChildPEDCTAS(){
     if(saveChild == 0){
-        paedctasChild = 'azul';
+        paedctasChild = Object.keys(codigos)[0];
     }else if(saveChild == 3){
-        paedctasChild = 'verde';
+        paedctasChild = Object.keys(codigos)[1];
     }else if(saveChild == 6){
-        paedctasChild = 'amarillo';
+        paedctasChild = Object.keys(codigos)[2];
     }else if(saveChild == 9){
-        paedctasChild = 'naranja';
+        paedctasChild = Object.keys(codigos)[3];
     }else if(saveChild >9){
-        paedctasChild = 'rojo';
+        paedctasChild = Object.keys(codigos)[4];
     }
 }
 
+//Para probar funcionalidad de Resultado
+paedctasTriangulo = Object.keys(codigos)[0];
+paedctasAlerta =  Object.keys(codigos)[0] ;
+paedctasChild = Object.keys(codigos)[0];
+
+//------------------ARRAYS CON ASIGNACIONES DE COLOR----------------------//
+//Array para comparar con las combinaciones
+const coloresPaed = [paedctasTriangulo, paedctasAlerta, paedctasChild];
+
+//Objeto con todas las combinaciones posibles en formato array
+const combinaciones = {
+    1: [Object.keys(codigos)[0], Object.keys(codigos)[0], Object.keys(codigos)[0]],
+    2: [Object.keys(codigos)[0], Object.keys(codigos)[0], Object.keys(codigos)[1]],
+    3: [Object.keys(codigos)[0], Object.keys(codigos)[0], Object.keys(codigos)[2]],
+    4: [Object.keys(codigos)[0], Object.keys(codigos)[0], Object.keys(codigos)[3]],
+    5: [Object.keys(codigos)[0], Object.keys(codigos)[0], Object.keys(codigos)[4]],
+    6: [Object.keys(codigos)[0], Object.keys(codigos)[1], Object.keys(codigos)[1]],
+    7: [Object.keys(codigos)[0], Object.keys(codigos)[1], Object.keys(codigos)[2]],
+    8: [Object.keys(codigos)[0], Object.keys(codigos)[1], Object.keys(codigos)[3]],
+    9: [Object.keys(codigos)[0], Object.keys(codigos)[1], Object.keys(codigos)[4]],
+    10: [Object.keys(codigos)[0], Object.keys(codigos)[2], Object.keys(codigos)[2]],
+    11: [Object.keys(codigos)[0], Object.keys(codigos)[2], Object.keys(codigos)[3]],
+    12: [Object.keys(codigos)[0], Object.keys(codigos)[2], Object.keys(codigos)[4]],
+    13: [Object.keys(codigos)[0], Object.keys(codigos)[3], Object.keys(codigos)[3]],
+    14: [Object.keys(codigos)[0], Object.keys(codigos)[3], Object.keys(codigos)[4]],
+    15: [Object.keys(codigos)[0], Object.keys(codigos)[4], Object.keys(codigos)[4]],
+    16: [Object.keys(codigos)[1], Object.keys(codigos)[1], Object.keys(codigos)[1]],
+    17: [Object.keys(codigos)[1], Object.keys(codigos)[1], Object.keys(codigos)[2]],
+    18: [Object.keys(codigos)[1], Object.keys(codigos)[1], Object.keys(codigos)[3]],
+    19: [Object.keys(codigos)[1], Object.keys(codigos)[1], Object.keys(codigos)[4]],
+    20: [Object.keys(codigos)[1], Object.keys(codigos)[2], Object.keys(codigos)[2]],
+    21: [Object.keys(codigos)[1], Object.keys(codigos)[2], Object.keys(codigos)[3]],
+    22: [Object.keys(codigos)[1], Object.keys(codigos)[2], Object.keys(codigos)[4]],
+    23: [Object.keys(codigos)[1], Object.keys(codigos)[3], Object.keys(codigos)[3]],
+    24: [Object.keys(codigos)[1], Object.keys(codigos)[3], Object.keys(codigos)[4]],
+    25: [Object.keys(codigos)[1], Object.keys(codigos)[4], Object.keys(codigos)[4]],
+    26: [Object.keys(codigos)[2], Object.keys(codigos)[2], Object.keys(codigos)[2]],
+    27: [Object.keys(codigos)[2], Object.keys(codigos)[2], Object.keys(codigos)[3]],
+    28: [Object.keys(codigos)[2], Object.keys(codigos)[2], Object.keys(codigos)[4]],
+    29: [Object.keys(codigos)[2], Object.keys(codigos)[3], Object.keys(codigos)[3]],
+    30: [Object.keys(codigos)[2], Object.keys(codigos)[3], Object.keys(codigos)[4]],
+    31: [Object.keys(codigos)[2], Object.keys(codigos)[4], Object.keys(codigos)[4]],
+    32: [Object.keys(codigos)[3], Object.keys(codigos)[3], Object.keys(codigos)[3]],
+    33: [Object.keys(codigos)[3], Object.keys(codigos)[3], Object.keys(codigos)[4]],
+    34: [Object.keys(codigos)[3], Object.keys(codigos)[4], Object.keys(codigos)[4]],
+    35: [Object.keys(codigos)[4], Object.keys(codigos)[4], Object.keys(codigos)[4]]
+};
 
 //------------------ASIGNAR COLOR SEGUN GRAVEDAD DEL PACIENTE-----------------//
 //Elementos de la hoja HTML para agregar el resultado
 let contenedorResultado = document.getElementById('resultado-triaje');
 let elementoResultado = document.createElement('p');
 
-//Variables con codigos
-const codigos = {
-    'AZUL':'V',
-    'VERDE':'IV',
-    'AMARILLO':'III',
-    'NARANJA':'II',
-    'ROJO':'I'
-}
+//Ciclo para determinar a que condicion clinica corresponde la asignacion de colores
+coloresPaed.forEach(function(elemento, indice) {
+    if (elemento == Object.values(combinaciones)[indice]) {
+      console.log('Funciona')
+    }
+  });
 
-paedctasTriangulo = 'azul';
-paedctasAlerta =  'azul' ;
-paedctasChild = 'azul';
-
+//Funcion que se encarga de arrojar el resultado segun valores introducidos
 function resultadoTriaje(){
-    if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'azul' && paedctasChild == 'azul'){
+    switch(coloresPaed){
+        case coloresPaed === Object.values(combinaciones)[0]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -658,7 +711,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
 
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta == 'azul' && paedctasChild == 'verde'){
+        case coloresPaed === Object.values(combinaciones)[1]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -679,28 +732,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
 
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta == 'azul' && paedctasChild == 'amarillo'){
-        elementoResultado.innerText = `
-            CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
-
-            Valores segun paedCTAS: ${codigos.AZUL}
-
-            Valores en Escalas Individuales:
-                -Triangulo Evaluacion Pediatrica Apariencia: {trianguloApariencia}
-                    - Interaccion {trianguloAparienciaInteraccion}
-                    - Tono {trianguloAparienciaTono}
-                    - Mirada {trianguloAParienciaMirada}
-                    - Llanto {trianguloAparienciaLlanto}
-                -Triangulo Evaluacion Pediatrica Respiratorio: {trianguloRespiracion}
-                -Triangulo Evaluacion Pediatrica Circulatorio: {trianguloCirculacion}
-
-                -Sistema de Alerta Temprana: {sistemaAlertaTemprana}
-
-                -Save A Child: {saveChild}
-        `;
-        contenedorResultado.appendChild(elementoResultado);
-    
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta == 'azul' && paedctasChild ==  'naranja'){
+        case coloresPaed === Object.values(combinaciones)[2]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -721,7 +753,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'azul' && paedctasChild ==  'rojo'){
+        case coloresPaed === Object.values(combinaciones)[3]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -742,7 +774,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'verde' && paedctasChild == 'verde'){
+        case coloresPaed === Object.values(combinaciones)[4]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -763,7 +795,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'verde' && paedctasChild == 'amarillo'){
+        case coloresPaed === Object.values(combinaciones)[5]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -784,7 +816,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'verde' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[6]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -805,7 +837,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'verde' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[7]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -826,7 +858,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'amarillo' && paedctasChild == 'amarillo'){
+        case coloresPaed === Object.values(combinaciones)[8]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -847,7 +879,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'amarillo' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[9]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -868,7 +900,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'amarillo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[10]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -889,7 +921,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'naranja' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[11]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -910,7 +942,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'naranja' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[12]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -931,7 +963,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'azul' && paedctasAlerta ==  'rojo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[13]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -952,28 +984,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'verde' && paedctasChild == 'verde'){
-        elementoResultado.innerText = `
-            CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
-
-            Valores segun paedCTAS: ${codigos.AZUL}
-
-            Valores en Escalas Individuales:
-                -Triangulo Evaluacion Pediatrica Apariencia: {trianguloApariencia}
-                    - Interaccion {trianguloAparienciaInteraccion}
-                    - Tono {trianguloAparienciaTono}
-                    - Mirada {trianguloAParienciaMirada}
-                    - Llanto {trianguloAparienciaLlanto}
-                -Triangulo Evaluacion Pediatrica Respiratorio: {trianguloRespiracion}
-                -Triangulo Evaluacion Pediatrica Circulatorio: {trianguloCirculacion}
-
-                -Sistema de Alerta Temprana: {sistemaAlertaTemprana}
-
-                -Save A Child: {saveChild}
-        `;
-        contenedorResultado.appendChild(elementoResultado);
-
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'verde' && paedctasChild == 'amarillo'){
+        case coloresPaed === Object.values(combinaciones)[14]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -994,7 +1005,28 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'verde' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[15]:
+        elementoResultado.innerText = `
+            CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
+
+            Valores segun paedCTAS: ${codigos.AZUL}
+
+            Valores en Escalas Individuales:
+                -Triangulo Evaluacion Pediatrica Apariencia: {trianguloApariencia}
+                    - Interaccion {trianguloAparienciaInteraccion}
+                    - Tono {trianguloAparienciaTono}
+                    - Mirada {trianguloAParienciaMirada}
+                    - Llanto {trianguloAparienciaLlanto}
+                -Triangulo Evaluacion Pediatrica Respiratorio: {trianguloRespiracion}
+                -Triangulo Evaluacion Pediatrica Circulatorio: {trianguloCirculacion}
+
+                -Sistema de Alerta Temprana: {sistemaAlertaTemprana}
+
+                -Save A Child: {saveChild}
+        `;
+        contenedorResultado.appendChild(elementoResultado);
+
+        case coloresPaed === Object.values(combinaciones)[16]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1015,7 +1047,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'verde' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[17]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1036,7 +1068,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'amarillo' && paedctasChild == 'amarillo'){
+        case coloresPaed === Object.values(combinaciones)[18]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1057,7 +1089,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'amarillo' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[19]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1078,7 +1110,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'amarillo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[20]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1099,7 +1131,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'naranja' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[21]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1120,7 +1152,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'naranja' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[22]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1141,7 +1173,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'verde' && paedctasAlerta ==  'rojo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[23]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1162,7 +1194,28 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'amarillo' && paedctasAlerta ==  'amarillo' && paedctasChild == 'amarillo'){
+        case coloresPaed === Object.values(combinaciones)[24]:
+        elementoResultado.innerText = `
+            CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
+
+            Valores segun paedCTAS: ${codigos.AZUL}
+
+            Valores en Escalas Individuales:
+                -Triangulo Evaluacion Pediatrica Apariencia: {trianguloApariencia}
+                    - Interaccion {trianguloAparienciaInteraccion}
+                    - Tono {trianguloAparienciaTono}
+                    - Mirada {trianguloAParienciaMirada}
+                    - Llanto {trianguloAparienciaLlanto}
+                -Triangulo Evaluacion Pediatrica Respiratorio: {trianguloRespiracion}
+                -Triangulo Evaluacion Pediatrica Circulatorio: {trianguloCirculacion}
+
+                -Sistema de Alerta Temprana: {sistemaAlertaTemprana}
+
+                -Save A Child: {saveChild}
+        `;
+        contenedorResultado.appendChild(elementoResultado);
+    
+        case coloresPaed === Object.values(combinaciones)[25]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1183,7 +1236,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
         
-    }else if(paedctasTriangulo == 'amarillo' && paedctasAlerta ==  'amarillo' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[26]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1204,7 +1257,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'amarillo' && paedctasAlerta ==  'amarillo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[27]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1225,7 +1278,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'amarillo' && paedctasAlerta ==  'naranja' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[28]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1246,7 +1299,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'amarillo' && paedctasAlerta ==  'naranja' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[29]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1267,7 +1320,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'amarillo' && paedctasAlerta ==  'rojo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[30]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1288,7 +1341,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'naranja' && paedctasAlerta ==  'naranja' && paedctasChild == 'naranja'){
+        case coloresPaed === Object.values(combinaciones)[31]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1309,7 +1362,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'naranja' && paedctasAlerta ==  'naranja' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[32]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1330,7 +1383,7 @@ function resultadoTriaje(){
         `;
         contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'naranja' && paedctasAlerta ==  'rojo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[33]:
         elementoResultado.innerText = `
         CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1351,7 +1404,7 @@ function resultadoTriaje(){
     `;
     contenedorResultado.appendChild(elementoResultado);
     
-    }else if(paedctasTriangulo == 'rojo' && paedctasAlerta ==  'rojo' && paedctasChild == 'rojo'){
+        case coloresPaed === Object.values(combinaciones)[34]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
 
@@ -1374,4 +1427,3 @@ function resultadoTriaje(){
           
     }
 }
-
