@@ -680,16 +680,26 @@ const combinaciones = {
 let contenedorResultado = document.getElementById('resultado-triaje');
 let elementoResultado = document.createElement('p');
 
-//Ciclo para determinar a que condicion clinica corresponde la asignacion de colores
-coloresPaed.forEach(function(elemento, indice) {
-    if (elemento == Object.values(combinaciones)[indice]) {
-      console.log('Funciona')
+//Funcion tomada de SOespañol (https://es.stackoverflow.com/a/415620/233164)
+function arrayEquals(a, b) {
+    for(i in Object.values(combinaciones)){
+        c = b[i]
+    
+        if(Array.isArray(a) && Array.isArray(c) && a.length === c.length && a.every((val, index) => val === c[index])){
+            console.log(c)
+            console.log(Object.keys(c)[i])
+            }
+        }
     }
-  });
+
+arrayEquals(coloresPaed, Object.values(combinaciones))
 
 //Funcion que se encarga de arrojar el resultado segun valores introducidos
 function resultadoTriaje(){
     switch(coloresPaed){
+        case coloresPaed.every((val, index) => val === Object.values(combinaciones)[index]):
+            console.log('Funciona');
+
         case coloresPaed === Object.values(combinaciones)[0]:
         elementoResultado.innerText = `
             CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
