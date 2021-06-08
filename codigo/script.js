@@ -79,7 +79,7 @@ const btnAbusoAus = document.querySelector('.abusoAusente');
 let trianguloApariencia;
 let trianguloAparienciaInteraccion;
 let trianguloAparienciaTono;
-let trianguloAParienciaMirada;
+let trianguloAparienciaMirada;
 let trianguloAparienciaLlanto;
 let trianguloCirculacion;
 let trianguloRespiracion;
@@ -176,7 +176,7 @@ function crearBoton(valor){
 function valorBoton(valor){
     trianguloAparienciaInteraccion = true;
     trianguloAparienciaTono = true;
-    trianguloAParienciaMirada = true;
+    trianguloAparienciaMirada = true;
     trianguloAparienciaLlanto = true;
     trianguloRespiracion = true;
     trianguloCirculacion = true;
@@ -411,8 +411,8 @@ function valorBoton(valor){
         btnTonoHipo.disabled = true;
 
     }else if(valor === 'mantieneMirada'){
-        if(trianguloAParienciaMirada != false){
-            trianguloAParienciaMirada = true;
+        if(trianguloAparienciaMirada != false){
+            trianguloAparienciaMirada = true;
         }
         saveChild += 0;
 
@@ -421,7 +421,7 @@ function valorBoton(valor){
         btnNoDirigeMira.disabled = true;
 
     }else if(valor === 'noMantieneMirada'){
-        trianguloAParienciaMirada = false;
+        trianguloAparienciaMirada = false;
         saveChild += 3;
 
         btnMantieneMira.disabled = true;
@@ -429,7 +429,7 @@ function valorBoton(valor){
         btnNoDirigeMira.disabled = true;
 
     }else if(valor === 'noDirigeMirada'){
-        trianguloAParienciaMirada = false;
+        trianguloAparienciaMirada = false;
         saveChild += 9;
 
         btnMantieneMira.disabled = true;
@@ -572,21 +572,21 @@ const codigos = {
 }
 
 function valorTriangulo(){
-    if(trianguloAparienciaInteraccion == true && trianguloAparienciaTono == true && trianguloAParienciaMirada == true && trianguloAparienciaLlanto == true){
-        trianguloAPariencia = true;
+    if(trianguloAparienciaInteraccion == true && trianguloAparienciaTono == true && trianguloAparienciaMirada == true && trianguloAparienciaLlanto == true){
+        trianguloApariencia = true;
     }else{
         trianguloApariencia = false;
     }
 }
 
 function valorTrianguloPEDCTAS(){
-    if(trianguloAPariencia == true && trianguloRespiracion == true && trianguloCirculacion == true){
+    if(trianguloApariencia == true && trianguloRespiracion == true && trianguloCirculacion == true){
         paedctasTriangulo = Object.keys(codigos)[0];
-    }else if(trianguloAPariencia == false && trianguloRespiracion == true && trianguloCirculacion == true){
+    }else if(trianguloApariencia == false && trianguloRespiracion == true && trianguloCirculacion == true){
         paedctasTriangulo = Object.keys(codigos)[1];
-    }else if(trianguloAPariencia == true && trianguloRespiracion == false && trianguloCirculacion == true){
+    }else if(trianguloApariencia == true && trianguloRespiracion == false && trianguloCirculacion == true){
         paedctasTriangulo = Object.keys(codigos)[2];
-    }else if(trianguloAPariencia == false && trianguloRespiracion == false && trianguloCirculacion == true){
+    }else if(trianguloApariencia == false && trianguloRespiracion == false && trianguloCirculacion == true){
         paedctasTriangulo = Object.keys(codigos)[3];
     }else if(trianguloApariencia == true && trianguloRespiracion == true && trianguloCirculacion == false){
         paedctasTriangulo = Object.keys(codigos)[2];
@@ -718,7 +718,7 @@ function resultadoTriaje(){
                 -Triangulo Evaluacion Pediatrica Apariencia: ${trianguloApariencia}
                     - Interaccion: ${trianguloAparienciaInteraccion}
                     - Tono: ${trianguloAparienciaTono}
-                    - Mirada: ${trianguloAParienciaMirada}
+                    - Mirada: ${trianguloAparienciaMirada}
                     - Llanto: ${trianguloAparienciaLlanto}
                 -Triangulo Evaluacion Pediatrica Respiratorio: ${trianguloRespiracion}
                 -Triangulo Evaluacion Pediatrica Circulatorio: ${trianguloCirculacion}
