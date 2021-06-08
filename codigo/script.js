@@ -628,9 +628,9 @@ function valorChildPEDCTAS(){
 }
 
 //Para probar funcionalidad de Resultado
-paedctasTriangulo = Object.keys(codigos)[1];
-paedctasAlerta =  Object.keys(codigos)[1] ;
-paedctasChild = Object.keys(codigos)[1];
+paedctasTriangulo = Object.keys(codigos)[4];
+paedctasAlerta =  Object.keys(codigos)[4];
+paedctasChild = Object.keys(codigos)[4];
 
 //------------------ARRAYS CON ASIGNACIONES DE COLOR----------------------//
 //Array para comparar con las combinaciones
@@ -701,19 +701,42 @@ function arrayEquals(){
 
             llave = d;
 
-            return resultadoTriaje();
+            return resultadoTriaje(c);
         }
     }
 }
 
 //Funcion que se encarga de arrojar el resultado segun valores introducidos
-function resultadoTriaje(){
+function resultadoTriaje(arrayEncontrado){
+    let colorEncontrado = Object.values(arrayEncontrado)[2];
+    let colorUrgencia;
+    let nivelUrgencia;
+    console.log(colorEncontrado);
+
+    if(colorEncontrado == 'AZUL'){
+        nivelUrgencia = codigos.AZUL;
+        colorUrgencia = Object.keys(codigos)[0];
+    }else if(colorEncontrado == 'VERDE'){
+        nivelUrgencia = codigos.VERDE;
+        colorUrgencia = Object.keys(codigos)[1];
+    }else if(colorEncontrado == 'AMARILLO'){
+        nivelUrgencia = codigos.AMARILLO;
+        colorUrgencia = Object.keys(codigos)[2];
+    }else if(colorEncontrado == 'NARANJA'){
+        nivelUrgencia = codigos.NARANJA;
+        colorUrgencia = Object.keys(codigos)[3];
+    }else if(colorEncontrado == 'ROJO'){
+        nivelUrgencia = codigos.ROJO;
+        colorUrgencia = Object.keys(codigos)[4];
+    }
+
+
     switch(true){
         case true:
             elementoResultado.innerText = `
-            CODIGO OBTENIDO: ${Object.keys(codigos)[0]}
+            CODIGO OBTENIDO: ${colorUrgencia}
 
-            Valores segun paedCTAS: ${codigos.AZUL}
+            Valores segun paedCTAS: ${nivelUrgencia}
 
             Valores en Escalas Individuales:
                 -Triangulo Evaluacion Pediatrica Apariencia: ${trianguloApariencia}
