@@ -1,77 +1,77 @@
 //--------------------------------BOTONES DE LOS HOJAS HTML-------------------------------//
 //Constantes de los botones de Conciencia
-const btnConcienciaDespierto = document.querySelector('.concienciaDespierto');
-const btnConcienciaDormido = document.querySelector('.concienciaDormido');
-const btnConcienciaIrritable = document.querySelector('.concienciaIrritable');
-const btnConcienciaConvulsiones = document.querySelector('.concienciaConvulsiones')
+const btnConcienciaDespierto = document.getElementById('concienciaDespierto');
+const btnConcienciaDormido = document.getElementById('concienciaDormido');
+const btnConcienciaIrritable = document.getElementById('concienciaIrritable');
+const btnConcienciaConvulsiones = document.getElementById('concienciaConvulsiones')
 
 //Constantes de los botones de Color Piel
-const btnPielRosa = document.querySelector('.colorPielRosa');
-const btnPielPalida = document.querySelector('.colorPielPalida');
-const btnPielCiano = document.querySelector('.colorPielCianotica');
-const btnPielRubi = document.querySelector('.colorPielRubicunda');
-const btnPielMarmo = document.querySelector('.colorPielMarmorea');
-const btnPielPurpura = document.querySelector('.colorPielPurpura');
+const btnPielRosa = document.getElementById('colorPielRosa');
+const btnPielPalida = document.getElementById('colorPielPalida');
+const btnPielCiano = document.getElementById('colorPielCianotica');
+const btnPielRubi = document.getElementById('colorPielRubicunda');
+const btnPielMarmo = document.getElementById('colorPielMarmorea');
+const btnPielPurpura = document.getElementById('colorPielPurpura');
 
 //Constantes de los botones de Hidratacion
-const btnHidraPielNml = document.querySelector('.estadoHidratacionPielNormal');
-const btnHidraPielPastosa = document.querySelector('.estadoHidratacionPielPastosa');
+const btnHidraPielNml = document.getElementById('estadoHidratacionPielNormal');
+const btnHidraPielPastosa = document.getElementById('estadoHidratacionPielPastosa');
 
-const btnHidraMucosaNml = document.querySelector('.estadoHidratacionMucosaNormal');
-const btnHidraMucosaSeca = document.querySelector('.estadoHidratacionMucosaSeca');
+const btnHidraMucosaNml = document.getElementById('estadoHidratacionMucosaNormal');
+const btnHidraMucosaSeca = document.getElementById('estadoHidratacionMucosaSeca');
 
-const btnHidraOjoNml = document.querySelector('.estadoHidratacionOjoNormal');
-const btnHidraOjoHundido = document.querySelector('.estadoHidratacionOjoHundido');
+const btnHidraOjoNml = document.getElementById('estadoHidratacionOjoNormal');
+const btnHidraOjoHundido = document.getElementById('estadoHidratacionOjoHundido');
 
-const btnHidraVomitoPres = document.querySelector('.estadoHidratacionVomitoPresente');
-const btnHidraVomitoAus = document.querySelector('.estadoHidratacionVomitoAusente');
+const btnHidraVomitoPres = document.getElementById('estadoHidratacionVomitoPresente');
+const btnHidraVomitoAus = document.getElementById('estadoHidratacionVomitoAusente');
 
-const btnHidraTolera = document.querySelector('.estadoHidratacionTolera');
-const btnHidraNoTolera = document.querySelector('.estadoHidratacionNoTolera');
+const btnHidraTolera = document.getElementById('estadoHidratacionTolera');
+const btnHidraNoTolera = document.getElementById('estadoHidratacionNoTolera');
 
-const btnHidraPlieguePos = document.querySelector('.estadoHidratacionPlieguePositivo');
-const btnHidraPliegueNeg = document.querySelector('.estadoHidratacionPliegueNegativo');
+const btnHidraPlieguePos = document.getElementById('estadoHidratacionPlieguePositivo');
+const btnHidraPliegueNeg = document.getElementById('estadoHidratacionPliegueNegativo');
 
 //Constantes de los botones de Actividad
-const btnActividadJuega = document.querySelector('.activJuega');
-const btnActividadConfundido = document.querySelector('.activConfundido');
-const btnActividadLetarg = document.querySelector('.activLetargico');
-const btnActividadIncons = document.querySelector('.activInconsciente');
+const btnActividadJuega = document.getElementById('activJuega');
+const btnActividadConfundido = document.getElementById('activConfundido');
+const btnActividadLetarg = document.getElementById('activLetargico');
+const btnActividadIncons = document.getElementById('activInconsciente');
 
 //Constates de los botones de Tono
-const btnTonoEuto = document.querySelector('.tonoEuto');
-const btnTonoHipo = document.querySelector('.tonoHipo');
-const btnTonoHiper = document.querySelector('.tonoHiper');
+const btnTonoEuto = document.getElementById('tonoEuto');
+const btnTonoHipo = document.getElementById('tonoHipo');
+const btnTonoHiper = document.getElementById('tonoHiper');
 
 //Constantes de los botones de Contacto Visual
-const btnMantieneMira = document.querySelector('.mantieneMirada');
-const btnNoMantieneMira = document.querySelector('.noMantieneMirada');
-const btnNoDirigeMira = document.querySelector('.noDirigeMirada');
+const btnMantieneMira = document.getElementById('mantieneMirada');
+const btnNoMantieneMira = document.getElementById('noMantieneMirada');
+const btnNoDirigeMira = document.getElementById('noDirigeMirada');
 
 //Constantes de los botones de Llanto
-const btnLlantoFuerte = document.querySelector('.llantoFuerte');
-const btnLlantoDebil = document.querySelector('.llantoDebil');
+const btnLlantoFuerte = document.getElementById('llantoFuerte');
+const btnLlantoDebil = document.getElementById('llantoDebil');
 
-const btnLlantoConso = document.querySelector('.llantoConsolable');
-const btnLlantoInconso = document.querySelector('.llantoInconsolable');
+const btnLlantoConso = document.getElementById('llantoConsolable');
+const btnLlantoInconso = document.getElementById('llantoInconsolable');
 
 //Constantes de los botones de Respiratorio
-const btnRuidoPres = document.querySelector('.ruidosPatologicosPresentes');
-const btnRuidoAus = document.querySelector('.ruidosPatologicosAusentes');
+const btnRuidoPres = document.getElementById('ruidosPatologicosPresentes');
+const btnRuidoAus = document.getElementById('ruidosPatologicosAusentes');
 
-const btnDificultadPres = document.querySelector('.dificultadRespiratoriaPresente');
-const btnDificultadAus = document.querySelector('.dificultadRespiratoriaAusente');
+const btnDificultadPres = document.getElementById('dificultadRespiratoriaPresente');
+const btnDificultadAus = document.getElementById('dificultadRespiratoriaAusente');
 
-const btnPosicionPres = document.querySelector('.posicionRespiratoriaPresente');
-const btnPosicionAus = document.querySelector('.posicionRespiratoriaAusente');
+const btnPosicionPres = document.getElementById('posicionRespiratoriaPresente');
+const btnPosicionAus = document.getElementById('posicionRespiratoriaAusente');
 
-//Constantes de los botones de Antecedentes
-const btnAntecedentesPres = document.querySelector('.antecedentesPresentes');
-const btnAntecedentesAus = document.querySelector('.antecedentesAusentes');
+//Constantes de los botones de Antecedentess
+const btnAntecedentesPres = document.getElementById('antecedentesPresentes');
+const btnAntecedentesAus = document.getElementById('antecedentesAusentes');
 
 //Constantes de los botones de Abuso
-const btnAbusoPres = document.querySelector('.abusoPresente');
-const btnAbusoAus = document.querySelector('.abusoAusente');
+const btnAbusoPres = document.getElementById('abusoPresente');
+const btnAbusoAus = document.getElementById('abusoAusente');
 
 //-----------------------------ESCALAS DE MEDICION DE GRAVEDAD-------------------------//
 //Variables para Triangulo de Evaluacion Pediatrica (TEP)
@@ -571,6 +571,7 @@ const codigos = {
     'ROJO':'I'
 }
 
+//Funciones para asignar valor a la Escala Canadiense segun los resultados de las escalas conjuntas
 function valorTriangulo(){
     if(trianguloAparienciaInteraccion == true && trianguloAparienciaTono == true && trianguloAparienciaMirada == true && trianguloAparienciaLlanto == true){
         trianguloApariencia = true;
@@ -627,9 +628,9 @@ function valorChildPEDCTAS(){
 }
 
 //Para probar funcionalidad de Resultado
-paedctasTriangulo = Object.keys(codigos)[0];
-paedctasAlerta =  Object.keys(codigos)[0] ;
-paedctasChild = Object.keys(codigos)[0];
+paedctasTriangulo = Object.keys(codigos)[1];
+paedctasAlerta =  Object.keys(codigos)[1] ;
+paedctasChild = Object.keys(codigos)[1];
 
 //------------------ARRAYS CON ASIGNACIONES DE COLOR----------------------//
 //Array para comparar con las combinaciones
@@ -685,26 +686,26 @@ function arrayEquals(){
     let a = coloresPaed;
     let b = Object.values(combinaciones);
 
+    console.log(`---Array a analizar: ${a}`)
+
     for(i in b){
         let c = b[i]
         let d = Object.keys(combinaciones)[i];
         let llave;
+
+        console.log(`---Arrays Analizados: ${b}`)
     
         if(Array.isArray(a) && Array.isArray(c) && a.length === c.length && a.every((val, index) => val === c[index])){
-            console.log(c);
-            console.log(d);
+            console.log(`---Valor array analizado: ${c}`);
+            console.log(`---Clave array analizaod: ${d}`);
 
             llave = d;
 
-            resultadoTriaje();
-        }else{
-            return 'Ha ocurrido un error'
+            return resultadoTriaje();
         }
     }
 }
 
-
-//HAY QUE HACER MODIFIC
 //Funcion que se encarga de arrojar el resultado segun valores introducidos
 function resultadoTriaje(){
     switch(true){
