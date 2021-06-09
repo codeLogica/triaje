@@ -754,3 +754,18 @@ function resultadoTriaje(arrayEncontrado){
             contenedorResultado.appendChild(elementoResultado);
     }
 }
+
+
+function cambiarImg(){
+    imgDesp = document.getElementById('img-desp')
+    imgDesp.src = '../imagenes/concienciaDespierto'   
+}
+
+function regresarImg(){
+    imgDesp = document.getElementById('img-desp')
+    imgDesp.src = '../imagenes/concienciaDespiertoQuieto.png'   
+}
+
+
+btnConcienciaDespierto.addEventListener('pointerenter', cambiarImg)
+btnConcienciaDespierto.addEventListener('pointerleave', regresarImg)

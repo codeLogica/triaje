@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Aspecto General</title>
+
+    <style> 
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -11,10 +18,25 @@
     </div>
     
     <div>
-        <button id="concienciaDespierto" onclick="valorBoton('despierto')">Consciente | Despierto </button>
-        <button id="concienciaDormido" onclick="valorBoton('dormido')">Dormido | Despierta Rapido</button>
-        <button id="concienciaIrritable" onclick="valorBoton('irritable')"> Consciencia Alterada | Irritable | Despierta Lento</button>
-        <button id="concienciaConvulsiones" onclick="valorBoton('convulsiones')">No despierta | No duerme | Convulsiones</button>
+        <label for='concienciaDespierto'>Consciente | Despierto </label> <br>
+        <button id="concienciaDespierto" onclick="valorBoton('despierto')">
+            <img id='img-desp' src="../imagenes/concienciaDespiertoQuieto.png"> 
+        </button>
+
+        <br> <label for='concienciaDormido'>Dormido | Despierta Rapido</label> <br>
+        <button id="concienciaDormido" onclick="valorBoton('dormido')">
+            <img id='img-dor' src="../imagenes/concienciaDormido">
+        </button>
+
+        <br><label for='concienciaIrritable'>Irritable | Despierta Lento</label> <br>
+        <button id="concienciaIrritable" onclick="valorBoton('irritable')"> 
+            <img src="../imagenes/concienciaIrritable">
+        </button>
+
+        <br><label for='concienciaConvulsiones'>No despierta | No duerme | Convulsiones</label> <br>
+        <button id="concienciaConvulsiones" onclick="valorBoton('convulsiones')">
+            <img src="../imagenes/rcp-984.gif">    
+        </button>
     </div>
 
     <br>
